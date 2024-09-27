@@ -3,12 +3,14 @@ from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
+import os
 
 # Load the data
 df = pd.read_csv('apple_products.csv')
 
 # Create the Dash app
 app = dash.Dash(__name__)
+server = app.server  # Needed for Render deployment
 
 # Define the layout
 app.layout = html.Div([
